@@ -12,8 +12,7 @@
                 <h4 class="font-bold">Admin Sign In</h4>
                 <p class="mb-0">Enter your email and password to sign in</p>
               </div>
-              <div class="flex-auto p-6">
-              
+              <div class="flex-auto p-6"> 
                   {!! Form::open(['route' => 'admin.login', "role"=>"form text-left"]) !!}
                   <div class="mb-4">
                     {!! Form::email("email", null,[
