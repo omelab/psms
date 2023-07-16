@@ -12,48 +12,67 @@ class SchoolController extends Controller
      */
     public function index()
     {
-        return view('modules.school.list');
+        $data['schools'] = School::all();
+        return view('modules.school.list',  $data);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request, $id=null)
     {
-        return view('modules.school.create');
+        $data =[];
+
+        if($id){
+            $data['school'] = School::find($id);
+        }
+
+        return view('modules.school.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, $id=null)
+    {  
+        $this->validate($request, [
+            'school_code' => 'required',
+            'school_name' => 'required',
+            'regi_number' => 'required',  
+            'address' => 'required',  
+            'emis_no' => 'required',  
+            'establishment' => 'required',  
+        ]);
+
+        if($id){
+            $school = School::findOrFail($id);
+        }else{
+            $school = new School;
+        } 
+        
+        $school->school_code =  $request->school_code;
+        $school->school_name = $request->school_name??null;
+        $school->regi_number =  $request->regi_number??null;
+        $school->address =  $request->address??null; 
+        $school->emis_no =  $request->emis_no??null; 
+        $school->establishment =  $request->establishment??null; 
+        $school->save();
+
+        if($school->id){
+            return redirect()->route('schools.create', $school->id)->with('success', 'School Information updated successfully.');
+        }
+
+        return redirect()->back()->with('errors', 'Something went wrong');
     }
 
     /**
      * Display the specified resource.
      */
     public function show(School $school)
-    {
+    { 
         return view('modules.school.single');
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(School $school)
-    {
-        return view('modules.school.create');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, School $school)
-    {
-        //
-    }
+ 
 
     /**
      * Remove the specified resource from storage.

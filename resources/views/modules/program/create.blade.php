@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Dashboard') 
+@section('title', 'School Information') 
 
 @section('content')
   <h1 style="margin-top:50px; display:block; color:#fff; padding-left:20px;">Welcome To Dashboard</h1>

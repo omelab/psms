@@ -6,9 +6,9 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ProgramController; 
 use App\Http\Controllers\LibraryController; 
 use App\Http\Controllers\AwardController; 
-use App\Http\Controllers\OwnerController; 
+use App\Http\Controllers\OwnersBoardController; 
 use App\Http\Controllers\CommitteeController; 
-use App\Http\Controllers\AccountController; 
+// use App\Http\Controllers\AccountController; 
 
 
 /*
@@ -50,11 +50,11 @@ Route::middleware('auth:admin')->group(function () {
     Route::resource('awards', AwardController::class);  
 
     //owners routes
-    Route::resource('owners', OwnerController::class);  
+    Route::resource('owners', OwnersBoardController::class);  
 
     //comeetees routes
     Route::resource('committees', CommitteeController::class);  
 
     //accounts routes
-    Route::resource('accounts', AccountController::class);  
+    // Route::resource('accounts', AccountController::class);  
 });

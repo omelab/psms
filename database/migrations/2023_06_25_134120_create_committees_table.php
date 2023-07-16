@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('committees', function (Blueprint $table) {
             $table->id();
+            $table->string('title_name');
+            $table->string('full_name');
+            $table->string('elected_year')->nullable(); 
             $table->timestamps();
         });
     }

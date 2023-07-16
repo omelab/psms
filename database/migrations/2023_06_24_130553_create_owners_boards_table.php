@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('owners_boards', function (Blueprint $table) {
             $table->id();
+            $table->string('title_name');
+            $table->string('teacher_name');
+            $table->string('from_date')->nullable();
+            $table->string('to_date')->nullable();  
             $table->timestamps();
         });
     }

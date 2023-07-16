@@ -1,16 +1,19 @@
 <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
     <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
       <nav>
-        <!-- breadcrumb -->
+        <!-- breadcrumb --> 
         <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
           <li class="text-sm leading-normal">
-            <a class="text-white opacity-50" href="javascript:;">Pages</a>
+            <a class="text-white opacity-50" href="{{route('dashboard')}}">Dashboard</a>
           </li>
-          <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Dashboard</li>
+          @hasSection('breadcrumb')
+            @yield('breadcrumb') 
+          @endif 
         </ol>
-        <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6>
-      </nav>
-
+        @hasSection('title')
+        <h6 class="mb-0 font-bold text-white capitalize">@yield('title')</h6> 
+        @endif
+      </nav> 
       <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
         <div class="flex items-center md:ml-auto md:pr-4">
           <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
@@ -44,7 +47,7 @@
                 <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
                   <div class="flex py-1">
                     <div class="my-auto">
-                      <img src="./assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
+                      <img src="{{asset('assets/img/team-2.jpg')}}" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
                     </div>
                     <div class="flex flex-col justify-center">
                       <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New message</span> from Laur</h6>
@@ -102,7 +105,7 @@
                 <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
                   <div class="flex py-1">
                     <div class="my-auto">
-                      <img src="./assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
+                      <img src="{{asset('assets/img/team-2.jpg')}}" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
                     </div>
                     <div class="flex flex-col justify-center">
                       <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New message</span> from Laur</h6>
@@ -119,7 +122,7 @@
                 <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
                   <div class="flex py-1">
                     <div class="my-auto">
-                      <img src="./assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 h-9 w-9 max-w-none rounded-xl" />
+                      <img src="{{asset('assets/img/small-logos/logo-spotify.svg')}}" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 h-9 w-9 max-w-none rounded-xl" />
                     </div>
                     <div class="flex flex-col justify-center">
                       <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New album</span> by Travis Scott</h6>
