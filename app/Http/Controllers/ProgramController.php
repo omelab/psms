@@ -12,7 +12,7 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        return view('modules.program.list');
+        return view('modules.program.index');
     }
 
     /**

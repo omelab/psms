@@ -32,5 +32,5 @@
     </body>
 
     @include('partials.scripts.script')
-
+    
 </html>

@@ -69,8 +69,8 @@ class SchoolController extends Controller
      * Display the specified resource.
      */
     public function show(School $school)
-    { 
-        return view('modules.school.single');
+    {  
+        return view('modules.school.single', compact('school'));
     }
  
 

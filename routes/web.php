@@ -8,6 +8,8 @@ use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\AwardController; 
 use App\Http\Controllers\OwnersBoardController; 
 use App\Http\Controllers\CommitteeController; 
+use App\Http\Controllers\SubjectController; 
+use App\Http\Controllers\ExamController; 
 // use App\Http\Controllers\AccountController; 
 
 
@@ -39,6 +41,15 @@ Route::middleware('auth:admin')->group(function () {
 
     //teachers routes
     Route::resource('teachers', TeacherController::class);  
+
+    //subject routes
+    Route::resource('subjects', SubjectController::class);  
+
+    //Exam routes
+    Route::resource('exams', ExamController::class);  
+
+    //Exam routes
+    Route::resource('books', BookController::class);
 
     //teachers routes
     Route::resource('programs', ProgramController::class);  

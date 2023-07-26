@@ -53,8 +53,8 @@
                            <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$row->establishment??'N/A'}}</span>
                         </td>
                         <td class="p-2 align-middle bg-transparent whitespace-nowrap shadow-transparent">
-                           <a href="{{route('schools.create', $row->id)}}" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
-                           <a href="{{route('schools.create', $row->id)}}" class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-1 text-xs rounded-1 py-1 inline-block text-xs font-semibold leading-tight text-white"> Show </a>
+                           <a href="{{route('schools.create', $row->id)}}" class="bg-orange-500 from-emerald-500 to-teal-400 px-1 text-xs rounded-1 py-1 inline-block text-xs font-semibold leading-tight text-white ml-1"> Edit </a>
+                           <a href="{{route('schools.show', $row->id)}}" class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-1 text-xs rounded-1 py-1 inline-block text-xs font-semibold leading-tight text-white ml-1"> Show </a>
                         </td>
                      </tr> 
                      @endforeach

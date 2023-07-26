@@ -21,12 +21,15 @@ return new class extends Migration
             $table->string('district')->nullable();
             $table->string('gender')->nullable();  
             $table->string('marital_status')->nullable();  
-            $table->string('date_of_birth')->nullable();  
+            $table->date('date_of_birth')->nullable();  
+            $table->date('joining_date')->nullable();  
             $table->string('education')->nullable();  
             $table->string('department')->nullable();  
             $table->string('email')->nullable();  
             $table->string('mobile')->nullable();  
             $table->string('notes')->nullable();  
+            $table->string('picture')->nullable();  
+            $table->enum('status', ['Active','Inactive','Deleted'])->default('Active');
             $table->timestamps();
         });
     }

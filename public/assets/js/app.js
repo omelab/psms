@@ -284,3 +284,13 @@ function getFormData($form) {
     });
     return obj;
 }
+
+
+/** Delete Confirm */
+function deleteConfirm($id) {
+    swalConfirm('sure to remove this').then(function (res) { 
+        if (res.isConfirmed) {
+            document.getElementById('delete-form'+$id).submit();
+        }
+    })
+}
